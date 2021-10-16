@@ -47,14 +47,14 @@ a:hover {
     color: white;
 }
 
-main {
+/* main {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
 
-}
+} */
 
-main li {
+/* main li {
     display: flex;
     flex-direction: row;
     margin-left: 2.5rem;
@@ -63,4 +63,47 @@ main li {
 main h2 {
     margin-left: 1rem;
     font-size: 3rem;
+} */
+
+thead {
+    display: flex;
+    flex-direction: row;
+    margin: 10rem 0 0 13rem ;
+
+}
+
+
+tbody {
+    display: flex;
+    flex-direction: row;
+    margin: 10rem 0 0 20rem ;
+
+}
+
+tbody td {
+    display: flex;
+    border: 1px solid black;
+    padding: 15px;
+    font-size: 25px;
+}
+
+thead td {
+    display: flex;
+    border: 1px solid black;
+    padding: 15px;
+    font-size: 25px;
+}
+
+tfoot {
+    display: flex;
+    flex-direction: row;
+    margin: 10rem 0 0 13rem ;
+
+}
+
+tfoot td {
+    display: flex;
+    border: 1px solid black;
+    padding: 15px;
+    font-size: 25px;
 }
