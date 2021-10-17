@@ -65,45 +65,36 @@ main h2 {
     font-size: 3rem;
 } */
 
-thead {
-    display: flex;
-    flex-direction: row;
-    margin: 10rem 0 0 13rem ;
 
+/* #table2 {
+    margin-top: 2rem;
+    margin-left: 11rem;
 }
 
+#table1 {
+    border: 1px solid black;
+    margin-left: 15rem;
+} */
+
+thead {
+    border: 1px solid black;
+    
+}
+
+th {
+    border: 1px solid black;
+    padding: 10px;
+}
 
 tbody {
-    display: flex;
-    flex-direction: row;
-    margin: 10rem 0 0 20rem ;
-
+    border: 1px solid black;
 }
 
-tbody td {
-    display: flex;
+td {
     border: 1px solid black;
-    padding: 15px;
-    font-size: 25px;
-}
-
-thead td {
-    display: flex;
-    border: 1px solid black;
-    padding: 15px;
-    font-size: 25px;
+    padding: 10px;
 }
 
 tfoot {
-    display: flex;
-    flex-direction: row;
-    margin: 10rem 0 0 13rem ;
-
-}
-
-tfoot td {
-    display: flex;
     border: 1px solid black;
-    padding: 15px;
-    font-size: 25px;
 }
