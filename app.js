@@ -3,6 +3,7 @@
 // seattle.renderTheList();
 
 let hours = [
+  ' ',
   '6 AM',
   '7 AM',
   '8 AM',
@@ -16,7 +17,7 @@ let hours = [
   '4 PM',
   '5 PM',
   '6 PM',
-  '7 PM'
+  '7 PM',
 ];
 
 // let seattleLocation = {
@@ -63,7 +64,7 @@ const parisRow = document.getElementById('paris');
 const limaRow = document.getElementById('lima');
 const hourlyTotals = document.getElementById('totals');
 
-function Stores(location, min, max, avg, cookieArray, total ) {
+function Stores(location, min, max, avg, cookieArray, total) {
   this.location = location;
   this.min = min;
   this.max = max;
@@ -73,58 +74,54 @@ function Stores(location, min, max, avg, cookieArray, total ) {
 
   this.getRandomCustomers = function () {
     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-  }
+  };
 
   this.getCookieSalesPerHour = function () {
     let cookiesSold = this.getRandomCustomers();
     let cookiesSoldEachHour = Math.ceil(cookiesSold * this.avg);
     return cookiesSoldEachHour;
-  }
+  };
 
   this.renderSeattle = function () {
-    for (let i = 0; i < hours.length; i++) {
+    for (let i = 0; i < hours.length - 1; i++) {
       let cookieSales = this.getCookieSalesPerHour();
       this.cookieArray.push(cookieSales);
       this.total += cookieSales;
       let td = document.createElement('td');
       td.textContent = this.cookieArray[i];
       seattleRow.appendChild(td);
-      
     }
+  };
 
-    
-  
-  }
-
-  this.seattleTotal = function() {
+  this.seattleTotal = function () {
     let td = document.createElement('td');
     td.textContent = this.total;
     seattleRow.appendChild(td);
-  }
+  };
 
-  this.tokyoTotal = function() {
+  this.tokyoTotal = function () {
     let td = document.createElement('td');
     td.textContent = this.total;
     tokyoRow.appendChild(td);
-  }
+  };
 
-  this.dubaiTotal = function() {
+  this.dubaiTotal = function () {
     let td = document.createElement('td');
     td.textContent = this.total;
     dubaiRow.appendChild(td);
-  }
+  };
 
-  this.parisTotal = function() {
+  this.parisTotal = function () {
     let td = document.createElement('td');
     td.textContent = this.total;
     parisRow.appendChild(td);
-  }
+  };
 
-  this.limaTotal = function() {
+  this.limaTotal = function () {
     let td = document.createElement('td');
     td.textContent = this.total;
     limaRow.appendChild(td);
-  }
+  };
 
   this.renderTokyo = function () {
     for (let i = 0; i < hours.length; i++) {
@@ -134,12 +131,8 @@ function Stores(location, min, max, avg, cookieArray, total ) {
       let td = document.createElement('td');
       td.textContent = this.cookieArray[i];
       tokyoRow.appendChild(td);
-      
     }
-
-    
-  
-  }
+  };
 
   this.renderDubai = function () {
     for (let i = 0; i < hours.length; i++) {
@@ -149,12 +142,8 @@ function Stores(location, min, max, avg, cookieArray, total ) {
       let td = document.createElement('td');
       td.textContent = this.cookieArray[i];
       dubaiRow.appendChild(td);
-      
     }
-
-    
-  
-  }
+  };
 
   this.renderParis = function () {
     for (let i = 0; i < hours.length; i++) {
@@ -164,12 +153,8 @@ function Stores(location, min, max, avg, cookieArray, total ) {
       let td = document.createElement('td');
       td.textContent = this.cookieArray[i];
       parisRow.appendChild(td);
-      
     }
-
-    
-  
-  }
+  };
 
   this.renderLima = function () {
     for (let i = 0; i < hours.length; i++) {
@@ -179,27 +164,21 @@ function Stores(location, min, max, avg, cookieArray, total ) {
       let td = document.createElement('td');
       td.textContent = this.cookieArray[i];
       limaRow.appendChild(td);
-      
     }
-
-    
-  
-  }
+  };
 }
 function header() {
-  
-for(let i = 0; i < hours.length; i++) {
-  let th = document.createElement('th');
-      thead.appendChild(th);
-      let tr = document.createElement('tr');
-      th.textContent = hours[i];
-      th.appendChild(tr);
-}
+  for (let i = 0; i < hours.length; i++) {
+    let th = document.createElement('th');
+    thead.appendChild(th);
+    let tr = document.createElement('tr');
+    th.textContent = hours[i];
+    th.appendChild(tr);
+  }
 }
 
 function footer() {
- 
-  for(let i = 0; i < hours.length; i++) {
+  for (let i = 0; i < hours.length; i++) {
     let th = document.createElement('th');
     tfoot.appendChild(th);
     // let tr = document.createElement('tr');
@@ -217,7 +196,7 @@ function dailyTotals() {
 
 const seattle = new Stores('Seattle', 25, 65, 6.3, [], 0);
 const tokyo = new Stores('Tokyo', 3, 24, 1.2, [], 0);
-const dubai = new Stores('Dubai', 11, 38, 3.7, [], 0 );
+const dubai = new Stores('Dubai', 11, 38, 3.7, [], 0);
 const paris = new Stores('Paris', 20, 38, 2.3, [], 0);
 const lima = new Stores('Lima', 2, 16, 4.6, [], 0);
 header();

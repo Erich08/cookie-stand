@@ -1,100 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
- background-color: gainsboro;
- font-family: 'Anton', sans-serif;
+  background-color: #222831;
+}
+
+main,
+header nav {
+  width: 960px;
+  margin: 0 auto;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #ff5722;
 }
 
-img {
-    width: 550px;
-    height: 200px;
-   
+header nav {
+  padding: 1 rem 0;
+  align-items: center;
+  display: flex;
 }
 
-h1 {
- font-size: 3rem;
- margin-left: 1rem;
- 
-
+header ul {
+  display: inline;
 }
 
-nav {
-   margin-right: 1rem;
+nav ul li {
+  display: inline;
 }
 
-li {
-    display: inline;
-    font-size: 1.5rem;
-    margin: 1rem;
-    
-}   
-
-a {
-    text-decoration: none;
-    color: black;
+nav ul li a {
+  padding: 2.75rem;
 }
 
-a:visited {
-    color: black;
+main {
+  padding: 1rem 0;
 }
 
-a:hover {
-    color: white;
+main section {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-/* main {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-
-} */
-
-/* main li {
-    display: flex;
-    flex-direction: row;
-    margin-left: 2.5rem;
+div article section {
+  display: flex;
+  float: right;
+  flex-direction: column;
+  width: 480px;
+  padding: 1rem 0 0 1rem;
+  overflow-y: scroll;
+  height: 300px;
+  background-color: white;
 }
 
-main h2 {
-    margin-left: 1rem;
-    font-size: 3rem;
-} */
-
-
-/* #table2 {
-    margin-top: 2rem;
-    margin-left: 11rem;
+footer {
+  background-color: gray;
+  height: 150px;
 }
 
-#table1 {
-    border: 1px solid black;
-    margin-left: 15rem;
-} */
-
-thead {
-    border: 1px solid black;
-    
+h3 {
+  font-size: 25px;
+  text-align: center;
 }
 
-th {
-    border: 1px solid black;
-    padding: 10px;
+section button {
+  display: flex;
+  flex-direction: column;
 }
 
-tbody {
-    border: 1px solid black;
+div button {
+  margin: 0 auto;
+  padding: 10px;
 }
 
-td {
-    border: 1px solid black;
-    padding: 10px;
+footer {
+  background-color: #ff5722;
+}
+footer section p {
+  font-size: 20px;
+}
+footer section {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-tfoot {
-    border: 1px solid black;
+footer h1 {
+  font-size: 25px;
+}
+
+footer div h1 {
+  text-align: center;
+}
+
+footer div h2 {
+  text-align: center;
+  font-size: 25px;
 }
