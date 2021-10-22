@@ -47,14 +47,14 @@ a:hover {
     color: white;
 }
 
-main {
+/* main {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
 
-}
+} */
 
-main li {
+/* main li {
     display: flex;
     flex-direction: row;
     margin-left: 2.5rem;
@@ -63,4 +63,38 @@ main li {
 main h2 {
     margin-left: 1rem;
     font-size: 3rem;
+} */
+
+
+/* #table2 {
+    margin-top: 2rem;
+    margin-left: 11rem;
+}
+
+#table1 {
+    border: 1px solid black;
+    margin-left: 15rem;
+} */
+
+thead {
+    border: 1px solid black;
+    
+}
+
+th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+tbody {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+tfoot {
+    border: 1px solid black;
 }
