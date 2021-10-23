@@ -1,7 +1,5 @@
 'use strict';
 
-// seattle.renderTheList();
-
 let hours = [
   '6 AM',
   '7 AM',
@@ -19,40 +17,7 @@ let hours = [
   '7 PM'
 ];
 
-// let seattleLocation = {
-//   name: 'Seattle',
-//   min: 23,
-//   max: 65,
-//   avg: 6.3,
-//   cookiesSoldEachHourArray: [],
-//   cookieTotal: 0,
 
-//   getRandomCustomers: function () {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-//   },
-
-//   getCookieSalesPerHour: function () {
-//     let cookiesSold = this.getRandomCustomers();
-//     let cookiesSoldEachHour = Math.ceil(cookiesSold * this.avg);
-//     return cookiesSoldEachHour;
-//   },
-
-//   renderList: function () {
-//     for (let i = 0; i < hours.length; i++) {
-//       // let cookiesSoldEachHour = Math.ceil(this.getRandomCustomers() * this.avg);
-//       let cookieSales = this.getCookieSalesPerHour();
-//       this.cookiesSoldEachHourArray.push(cookieSales);
-//       this.cookieTotal += cookieSales;
-//       console.log(cookieSales, this.cookieTotal);
-//       let li = document.createElement('li');
-//       li.textContent = `${hours[i]}: ${this.getCookieSalesPerHour()} cookies`;
-//       seattleList.appendChild(li);
-//     }
-//     let totalCookies = document.createElement('li');
-//     totalCookies.textContent = `Total cookies: ${this.cookieTotal}`;
-//     seattleList.appendChild(totalCookies);
-//   },
-// };
 const tfoot = document.querySelector('tfoot');
 const table = document.querySelector('table');
 const thead = document.querySelector('thead');
@@ -215,6 +180,16 @@ function dailyTotals() {
   thead.appendChild(th);
 }
 
+function rowTest() {
+  let rowsum = document.getElementById('rowsum');
+  let rowVal = 0;
+  for(let i = 0; i < table.rows.length; i++) {
+    rowVal = rowVal + parseInt(table.rows[i].cells[1].innerHTML);
+    return rowVal;
+  }
+  console.log(rowVal);
+}
+
 const seattle = new Stores('Seattle', 25, 65, 6.3, [], 0);
 const tokyo = new Stores('Tokyo', 3, 24, 1.2, [], 0);
 const dubai = new Stores('Dubai', 11, 38, 3.7, [], 0 );
@@ -233,3 +208,5 @@ paris.renderParis();
 paris.parisTotal();
 lima.renderLima();
 lima.limaTotal();
+
+// rowTest();
