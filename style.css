@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #222831;
+  background-color: #ff5722;
 }
 
 main,
@@ -101,4 +101,25 @@ footer div h1 {
 footer div h2 {
   text-align: center;
   font-size: 25px;
+}
+
+table tr td {
+  border: 1px solid black;
+}
+
+.salesheader {
+  display: flex;
+  flex-direction: row;
+}
+
+.salesheader img {
+  width: 200px;
+}
+
+.salesheader h1 {
+  display: inline-block;
+}
+
+.salesheader ul {
+  display: inline;
 }
