@@ -1,5 +1,6 @@
 'use strict';
 
+
 // seattle.renderTheList();
 
 let hours = [
@@ -69,21 +70,6 @@ function Stores(location, min, max, avg) {
 
 };
 
-let seattle = new Stores('Seattle', 25, 65, 6.3);
-let tokyo = new Stores('Tokyo', 3, 24, 1.2);
-let dubai = new Stores('Dubai', 11, 38, 3.7);
-let paris = new Stores('Paris', 20, 38, 2.3);
-let lima = new Stores('Lima', 2, 16, 4.6);
-
-
-seattle.renderStore();
-tokyo.renderStore();
-dubai.renderStore();
-paris.renderStore();
-lima.renderStore();
-header();
-footer();
-
 function header() {
   let tr = document.createElement('tr');
     thead.appendChild(tr);
@@ -94,13 +80,22 @@ function header() {
   }
 }
 
+
+
 function footer() {
   let hourlyCookieTotals = [];
   let tr = document.createElement('tr');
   tfoot.appendChild(tr);
+  tr.setAttribute('id','newTotal');
   let td = document.createElement('td');
-  td.textContent= 'Totals';
+  td.textContent = 'Totals'
   tr.appendChild(td);
+  // tfoot.appendChild(tr);
+  // let tr = document.createElement('tr');
+  // tfoot.appendChild(tr);
+  // let td = document.createElement('td');
+  // td.textContent= 'Totals';
+  // tr.appendChild(td);
   let finalTotal = 0;
   for(let i = 0; i < hours.length -2; i++) {
     let hourlyTotals = 0
@@ -121,6 +116,45 @@ function footer() {
 }
 
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let storeLocation = event.target.storeLocation.value;
+  let minValue= event.target.minValue.value;
+  let maxValue = event.target.maxValue.value;
+  let avg = event.target.avg.value;
+  let newLocation = new Stores(storeLocation, minValue, maxValue, avg);
+  newLocation.renderStore();
+  let cookieTableRemove = document.getElementsByTagName('tfoot')[0];
+  let cookieTableRow = document.getElementById('newTotal');
+  console.log(cookieTableRemove);
+  cookieTableRemove.removeChild(cookieTableRow);
+  footer();
+  
+}
+
+
+
+
+
+let seattle = new Stores('Seattle', 25, 65, 6.3);
+let tokyo = new Stores('Tokyo', 3, 24, 1.2);
+let dubai = new Stores('Dubai', 11, 38, 3.7);
+let paris = new Stores('Paris', 20, 38, 2.3);
+let lima = new Stores('Lima', 2, 16, 4.6);
+
+
+
+
+
+
+seattle.renderStore();
+tokyo.renderStore();
+dubai.renderStore();
+paris.renderStore();
+lima.renderStore();
+header();
+footer();
+newStore.addEventListener('submit', handleSubmit);
 
 
 
